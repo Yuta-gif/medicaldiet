@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Medical Diet LP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 20px;
+    }
+    main {
+      padding: 20px;
+    }
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Medical Diet サンプルページ</h1>
+  </header>
+
+  <main>
+    <p>ここに動画が自動再生されます 👇</p>
+
+    <!-- サンプル動画（差し替え可） -->
+    <video src="video.mp4" autoplay muted playsinline loop></video>
+
+    <p style="margin-top: 100vh;">下までスクロールすると紙吹雪 🎉</p>
+  </main>
+
+  <!-- 紙吹雪ライブラリ -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > innerHeight && !window._fired) {
+        window._fired = true;
+        confetti({ particleCount: 150, spread: 70 });
+      }
+    });
+  </script>
+
+</body>
+</html>
